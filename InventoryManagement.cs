@@ -111,6 +111,8 @@ namespace InventoryManagement
             Console.WriteLine("1. Rice Details : ");
             Console.WriteLine("2. Pulses Details : ");
             Console.WriteLine("3. Wheat Details : ");
+            Console.WriteLine("4. All Items Details : ");
+            Console.WriteLine("5. Add Items Again : ");
             int select = int.Parse(Console.ReadLine());
             Console.Clear();
             switch(select)
@@ -135,6 +137,26 @@ namespace InventoryManagement
                     {
                         Console.WriteLine(wheat.toString() + "\n");
                     }
+                    break;
+                case 4:
+                    Console.WriteLine("--------------------------RICE DETAILS---------------------------------\n\n");
+                    foreach (var rice in inn.Rice)
+                    {
+                        Console.WriteLine(rice.toString() + "\n");
+                    }
+                    Console.WriteLine("--------------------------PULSES DETAILS---------------------------------\n\n");
+                    foreach (var pulses in inn.Pulses)
+                    {
+                        Console.WriteLine(pulses.toString() + "\n");
+                    }
+                    Console.WriteLine("--------------------------WHEAT DETAILS---------------------------------\n\n");
+                    foreach (var wheat in inn.Wheat)
+                    {
+                        Console.WriteLine(wheat.toString() + "\n");
+                    }
+                    break;
+                case 5:
+                    AddItems();
                     break;
                 default:
                     Environment.Exit(0);
